@@ -1,6 +1,6 @@
 mongoose=require('mongoose')
 
-schema=mongoose.schema
+schema=mongoose.Schema
 customerSchema=new mongoose.Schema({
     customerId: Number,
     name: String,
