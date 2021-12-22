@@ -1,5 +1,7 @@
+config=require('./assets/config')
+
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/customerdb";
+var url = "mongodb://localhost:"+config.mongoport+"/"+config.mongodb;
 
 MongoClient.connect(url, function(err, db) {
     if (err) throw err;

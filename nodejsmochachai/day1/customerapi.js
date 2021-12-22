@@ -1,6 +1,7 @@
 const bodyParser = require("body-parser");
 var express=require('express')
 var cors=require("cors");
+config=require('./assets/config')
 app=express()
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -12,7 +13,7 @@ app.get('/',function(request,response){
 
 })
 
-app.listen(4000,function()
+app.listen(config.port,function()
 {
-    console.log('Server started at 4000....');
+    console.log('Server started at....',config.port);
 });
