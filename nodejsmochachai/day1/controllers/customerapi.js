@@ -17,9 +17,9 @@ app.post('/customers',function(request,response){
     response.setHeader('Access-Control-Allow-Methods', 'GET, POST');
     response.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type");
     response.setHeader('Access-Control-Allow-Credentials', true);
-    console.dir(request.query);
+    console.log(request.body);
     //console.log(request);
-
+   response.end("Data Received....",request.query)
 })
 
 app.listen(config.port,function()
