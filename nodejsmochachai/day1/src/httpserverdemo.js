@@ -1,6 +1,6 @@
 var http=require('http')
 var server = http.createServer(function (req,res){
-    res.writeHead("Status:Code"+200)
+    res.writeHead(200)
     res.end("Server Ready to Rock.....")
 })
 
