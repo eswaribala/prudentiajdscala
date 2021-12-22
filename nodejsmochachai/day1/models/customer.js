@@ -11,7 +11,7 @@ addressSchema=new mongoose.Schema({
     doorNo: String,
     streetName: String,
     city: String,
-    customerRef: [{ type: Schema.Types.ObjectId, ref: 'CustomerModel' }]
+    customerRef: [{ type: mongoose.Schema.Types.ObjectId, ref:'CustomerModel' }]
 })
 
 module.exports.CustomerModel=mongoose.model('CustomerModel',customerSchema)
