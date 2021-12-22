@@ -2,6 +2,7 @@ const bodyParser = require("body-parser");
 var express=require('express')
 var cors=require("cors");
 config=require('../assets/config')
+customerService=require('../services/customerservice')
 app=express()
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -18,8 +19,10 @@ app.post('/customers',function(request,response){
     response.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type");
     response.setHeader('Access-Control-Allow-Credentials', true);
     console.log(request.body);
+    customer=request.body;
+    customerService.addCustomer(customer)
     //console.log(request);
-   response.end("Data Received....",request.query)
+   response.end("Data Received....")
 })
 
 app.listen(config.port,function()
