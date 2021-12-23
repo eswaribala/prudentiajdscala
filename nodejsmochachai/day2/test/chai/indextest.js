@@ -86,5 +86,20 @@ describe('Url should return 200 response',function(){
 
     })
 
+    it('response array should return property value',function(){
+//promise
+        this.timeout(5000)
+        return getUsers('https://jsonplaceholder.typicode.com/users').then(res=> {
+                assert.propertyVal(res.data[0], 'name', 'Leanne Graham');
+                assert.propertyVal(res.data[0].company,
+                    'name', "Romaguera-Crona")
+                assert.deepPropertyVal(res.data[0], 'company', {"name": "Romaguera-Crona",
+                    "catchPhrase": "Multi-layered client-server neural-net",
+                    "bs": "harness real-time e-markets"});
+
+            }
+        )
+
+    })
 })
 
