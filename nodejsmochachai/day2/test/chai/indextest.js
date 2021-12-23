@@ -56,23 +56,18 @@ describe('Url should return 200 response',function(){
         assert.deepInclude({user1: data[0], user2: data[1]}, {user1: testData});
     })
 
-    /*
+
     it('response array should check nested deep include  given Object key,value',function(){
 //promise
         this.timeout(5000)
-        testData={
-                  "geo": {
-                      "lat": "-37.3159",
-                      "lng": "81.1496"
-                  }
-            }
+
         return getUsers('https://jsonplaceholder.typicode.com/users').then(res=> {
-            console.log(res.data[0].address.geo)
-            console.log(testData.geo)
-           assert.nestedInclude(res.data[0].address.geo, {'geo': testData.geo});
+
+            assert.nestedInclude(res.data[0].company, {'name':"Romaguera-Crona"});
+            assert.nestedInclude(res.data[0].address.geo, {'lat':"-37.3159"});
             }
         )
-    })*/
+    })
 
 
     it('response array should return property name',function(){
