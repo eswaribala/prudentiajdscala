@@ -7,6 +7,5 @@ describe('Url should return 200 response',function(){
      return getUsers('https://jsonplaceholder.typicode.com/users').then(res=>{
          assert.ok(res.data.length==10)
      })
-
     })
 })
