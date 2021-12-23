@@ -6,10 +6,16 @@ module.exports.getUsers=function(url){
 
 Users=[
     {
-        name:'Leane'
+        name:{
+            firstName:"Parameswari",
+            lastName:"Bala"
+        }
     },
     {
-        name:'John'
+        name:{
+            firstName:"Vignesh",
+            lastName:"Bala"
+        }
     }
 
 ]

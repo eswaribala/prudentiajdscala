@@ -49,9 +49,19 @@ describe('Url should return 200 response',function(){
 //promise
         this.timeout(5000)
          data=CustomUsers()
-        assert.deepInclude({user1: data[0], user2: data[1]}, {user1: {name: 'Leane'}});
+         testData={name:{
+            firstName:"Parameswari",
+                lastName:"Bala"
+        }}
+        assert.deepInclude({user1: data[0], user2: data[1]}, {user1: testData});
     })
+    it('response array should check nested deep include  given Object key,value',function(){
+//promise
+        this.timeout(5000)
+        data=CustomUsers()
 
+        assert.nestedInclude(data[0], {'name.firstName': 'Parameswari'});
+    })
 
 })
 
