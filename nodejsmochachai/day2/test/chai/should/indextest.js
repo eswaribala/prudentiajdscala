@@ -18,9 +18,9 @@ describe('Url should return 200 response',function(){
     it('Invoke getUsers method using axios boolean',function(){
 //promise
         return getUsers('https://jsonplaceholder.typicode.com/users').then(res=> {
-            should.fail(res.data.length, 10, "Array size check", "<=");
+           // should.fail(res.data.length, 10, "Array size check", "<=");
 
-                //expect(res.data.length==10).to.true
+                expect(res.data.length==10).to.true
             }
         )
     })

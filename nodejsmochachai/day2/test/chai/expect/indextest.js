@@ -4,6 +4,7 @@ expect=require('chai').expect
 should=require('chai').should()
 var getUsers = require("../../../src/asyncawait/index").getUsers
 var CustomUsers=require("../../../src/asyncawait/index").CustomUsers
+var ReadFile=require("../../../src/asyncawait/index").ReadFile
 
 describe('Url should return 200 response',function(){
     it('Invoke getUsers method using axios',function(){
@@ -34,7 +35,7 @@ describe('Url should return 200 response',function(){
     it('response should be an Object',function(){
 //promise
         return getUsers('https://jsonplaceholder.typicode.com/users').then(res=> {
-                assert.typeOf(res.data[0],'object','User Object Exists')
+            expect(res.data[0]).to.be.an('object');
             }
         )
     })
@@ -42,7 +43,8 @@ describe('Url should return 200 response',function(){
     it('response array should include  given Object name',function(){
 //promise
         return getUsers('https://jsonplaceholder.typicode.com/users').then(res=> {
-                assert.include(res.data,res.data[5],'Given User Exists')
+            expect(res.data).to.include(res.data[5]);
+
             }
         )
     })
@@ -55,7 +57,8 @@ describe('Url should return 200 response',function(){
             firstName:"Parameswari",
                 lastName:"Bala"
         }}
-        assert.deepInclude({user1: data[0], user2: data[1]}, {user1: testData});
+        expect(data).to.deep.include(testData);
+
     })
 
 
@@ -64,9 +67,9 @@ describe('Url should return 200 response',function(){
         this.timeout(5000)
 
         return getUsers('https://jsonplaceholder.typicode.com/users').then(res=> {
+            expect(res.data[0].company).to.nested.include({'name':"Romaguera-Crona"});
+            expect(res.data[0].address.geo).to.nested.include({'lat':"-37.3159"});
 
-            assert.nestedInclude(res.data[0].company, {'name':"Romaguera-Crona"});
-            assert.nestedInclude(res.data[0].address.geo, {'lat':"-37.3159"});
             }
         )
     })
@@ -76,8 +79,8 @@ describe('Url should return 200 response',function(){
 //promise
         this.timeout(5000)
         return getUsers('https://jsonplaceholder.typicode.com/users').then(res=> {
-            assert.property(res.data[0], 'name');
-            assert.property(res.data[0].address, 'geo');
+            expect(res.data[0]).to.have.property('name');
+           expect(res.data[0].address).to.have.property('geo');
             }
         )
 
@@ -97,6 +100,25 @@ describe('Url should return 200 response',function(){
             }
         )
 
+    })
+
+    it("User\'s Email Pattern",async function(){
+        //increase the default timeout to 5000ms
+        this.timeout(5000)
+        const response=  await getUsers('https://jsonplaceholder.typicode.com/users')
+        //console.log(response.status);
+        expect(response.data[0].email, 'Email Pattern testing').to.match(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}/);
+
+    })
+
+
+    it("Read File Type Not Found should throw Exception",function(){
+        //increase the default timeout to 5000ms
+        this.timeout(5000)
+        var result= ReadFile('../../../../assets/test.db')
+        //console.log(response.status);
+        //expect(response.data[0].email, 'Email Pattern testing').to.match(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}/);
+        console.log(result)
     })
 })
 

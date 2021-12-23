@@ -23,3 +23,19 @@ Users=[
 module.exports.CustomUsers=function(){
     return Users;
 }
+
+
+module.exports.ReadFile=function(file){
+    var filetype=/text.*/;
+   if(file.exist) {
+       var reader = new FileReader();
+       reader.onload = function (evt) {
+           displayref.innerText = reader.result;
+       };
+       //read the content
+       reader.readAsText(fileName);
+   }
+    else
+        throw 'File Not Found';
+
+}
