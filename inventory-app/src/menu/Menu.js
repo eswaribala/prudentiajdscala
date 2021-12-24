@@ -3,10 +3,10 @@ import './Menu.css'
 //functional way of component
 export const Menu=(props)=>{
     return (
-      <div>
+      <div >
           {
               props.items.map(item => (
-                  <button key={item.id}>
+                  <button key={item.id} className="btn-style">
                       {item.name}
                   </button>
               ))
