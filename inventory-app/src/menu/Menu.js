@@ -6,9 +6,11 @@ export const Menu=(props)=>{
       <div >
           {
               props.items.map(item => (
+                  <div className='vertical-style'>
                   <button key={item.id} className="btn-style">
                       {item.name}
                   </button>
+                  </div>
               ))
           }
       </div>

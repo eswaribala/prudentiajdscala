@@ -63,15 +63,16 @@ export class App extends React.Component{
     render() {
         console.log("Component rendered....")
         return (
-            <div className="App">
+            <div >
                 <div className='header-style'>
                 <Logo/>
                 <h2>John Deere Inventory App</h2>
+                    <h4>{this.state.currentTime.toLocaleTimeString()}</h4>
                 <img src={productPath} class="img"/>
                 </div>
-                <h4>{this.state.currentTime.toLocaleTimeString()}</h4>
 
-                <Menu items={this.state.menu}/>
+
+                <Menu items={this.state.menu} className="menu-style"/>
             </div>
         );
     }
