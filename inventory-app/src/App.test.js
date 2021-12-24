@@ -11,7 +11,7 @@ test('renders learn react link', () => {
 
 describe('Screen should have text as John Deere Inventory App',()=>{
     it('Shallow component should have snapshots',()=>{
-        const wrapper=shallow(App)
-
+        const component=shallow(<App/>)
+        expect(component).toMatchInlineSnapshot
     })
 })
