@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React from "react";
+import Menu from './menu'
 /*
 function App() {
   return (
@@ -64,6 +65,8 @@ export class App extends React.Component{
 
                 <h2>John Deere Inventory App</h2>
                 <h4>{this.state.currentTime.toLocaleTimeString()}</h4>
+                <!--sending props-->
+                <Menu item={this.state.menu}/>
             </div>
         );
     }
