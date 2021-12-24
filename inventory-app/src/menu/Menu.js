@@ -1,10 +1,12 @@
 import React from "react";
-
+import './Menu.css'
 //functional way of component
-export const menu=()=>{
+export const menu=(props)=>{
     return (
-        <div className="App">
-
-        </div>
+      props.items.map(item=>(
+          <button key={item.id}>
+              {item.name}
+          </button>
+      ))
     );
 }

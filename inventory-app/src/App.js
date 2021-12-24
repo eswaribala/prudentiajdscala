@@ -65,8 +65,8 @@ export class App extends React.Component{
 
                 <h2>John Deere Inventory App</h2>
                 <h4>{this.state.currentTime.toLocaleTimeString()}</h4>
-                <!--sending props-->
-                <Menu item={this.state.menu}/>
+
+                <Menu items={this.state.menu}/>
             </div>
         );
     }
