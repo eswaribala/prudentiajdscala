@@ -14,4 +14,9 @@ describe('Screen should have text as John Deere Inventory App',()=>{
         const component=shallow(<App/>)
         expect(component).toMatchInlineSnapshot
     })
+    it('Render Component to test Screen Text',()=>{
+        render(<App/>)
+        const text=screen.getByText('John Deere Inventory App')
+        expect(text).toBeInTheDocument
+    })
 })
