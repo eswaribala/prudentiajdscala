@@ -1,10 +1,13 @@
 import React from "react";
 
-export const AddProduct=()=>{
+export class AddProduct extends React.Component{
 
-    return(
-        <div>
-         <h2>Add Product</h2>
-        </div>
-    )
+    render() {
+        return(
+            <div>
+                <h1>Add Product</h1>
+            </div>
+        )
+    }
 }
+

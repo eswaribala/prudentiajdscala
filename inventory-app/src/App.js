@@ -24,17 +24,17 @@ export class App extends React.Component{
             menu:[{
                 menuId:1,
                 name:'Home',
-                menuLink:'#/Home'
+                path:'#/Home'
             },
                 {
                     menuId:2,
                     name:'Add Product',
-                    menuLink:'#/AddProduct'
+                    path:'#/AddProduct'
                 },
                 {
                     menuId:3,
                     name:'View Product',
-                    menuLink:'#/ViewProduct'
+                    path:'#/ViewProduct'
                 }
 
 

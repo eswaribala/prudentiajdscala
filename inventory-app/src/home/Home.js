@@ -1,10 +1,12 @@
 import React from "react";
 
-export const Home=()=>{
+export class Home extends React.Component{
 
-    return(
-        <div>
-         <h1>Home</h1>
-        </div>
-    )
+    render() {
+        return(
+            <div>
+                <h1>Home</h1>
+            </div>
+        )
+    }
 }

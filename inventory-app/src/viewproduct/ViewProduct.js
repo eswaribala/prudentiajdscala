@@ -1,10 +1,12 @@
 import React from "react";
 
-export const ViewProduct=()=>{
+export class ViewProduct extends React.Component{
 
-    return(
-        <div>
-          <h2>View Product</h2>
-        </div>
-    )
+    render() {
+        return(
+            <div>
+                <h1>View Product</h1>
+            </div>
+        )
+    }
 }
