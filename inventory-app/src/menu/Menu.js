@@ -1,9 +1,9 @@
 import React from "react";
 import './Menu.css'
 import {Route, HashRouter, Routes} from 'react-router-dom'
-import {Home} from '../home/Home'
-import {AddProduct} from "../addproduct/AddProduct";
-import {ViewProduct} from "../viewproduct/ViewProduct";
+import Home from '../home/Home'
+import AddProduct from "../addproduct/AddProduct";
+import ViewProduct from "../viewproduct/ViewProduct";
 //functional way of component
 export const Menu=(props)=>{
     return (
@@ -12,7 +12,8 @@ export const Menu=(props)=>{
           {
               props.items.map(item => (
                   <div className='vertical-style'>
-                  <button key={item.menuId} className="btn-style">
+                  <button key={item.menuId} className="btn-style"
+                          onClick={()=>{ window.location.hash=item.path}}>
                       {item.name}
                   </button>
                   </div>
@@ -20,6 +21,7 @@ export const Menu=(props)=>{
           }
       </div>
       <Routes>
+          <Route path="/" element={Home}></Route>
           <Route path="/Home" component={Home}></Route>
           <Route path="/AddProduct" component={AddProduct}></Route>
           <Route path="/ViewProduct" component={ViewProduct}></Route>
