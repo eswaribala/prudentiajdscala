@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import React from "react";
 import {Menu} from './menu/Menu'
+import {Logo} from './logo/Logo'
+import productPath from './assets/product.jpg'
 /*
 function App() {
   return (
@@ -62,8 +64,11 @@ export class App extends React.Component{
         console.log("Component rendered....")
         return (
             <div className="App">
-
+                <div className='header-style'>
+                <Logo/>
                 <h2>John Deere Inventory App</h2>
+                <img src={productPath} class="img"/>
+                </div>
                 <h4>{this.state.currentTime.toLocaleTimeString()}</h4>
 
                 <Menu items={this.state.menu}/>
