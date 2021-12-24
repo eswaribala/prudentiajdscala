@@ -1,12 +1,16 @@
 import React from "react";
 import './Menu.css'
 //functional way of component
-export const menu=(props)=>{
+export const Menu=(props)=>{
     return (
-      props.items.map(item=>(
-          <button key={item.id}>
-              {item.name}
-          </button>
-      ))
+      <div>
+          {
+              props.items.map(item => (
+                  <button key={item.id}>
+                      {item.name}
+                  </button>
+              ))
+          }
+      </div>
     );
 }

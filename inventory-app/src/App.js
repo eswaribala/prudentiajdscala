@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React from "react";
-import Menu from './menu'
+import {Menu} from './menu/Menu'
 /*
 function App() {
   return (
@@ -26,12 +26,12 @@ export class App extends React.Component{
             },
                 {
                     menuId:2,
-                    name:'Add Products',
+                    name:'Add Product',
                     menuLink:'#/AddProducts'
                 },
                 {
                     menuId:1,
-                    name:'View Products',
+                    name:'View Product',
                     menuLink:'#/ViewProducts'
                 }
 
