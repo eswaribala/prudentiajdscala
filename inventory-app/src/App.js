@@ -17,7 +17,27 @@ export class App extends React.Component{
         console.log("component instantiated...")
         //create state
         this.state={
-            currentTime:new Date()
+            currentTime:new Date(),
+            menu:[{
+                menuId:1,
+                name:'Home',
+                menuLink:'#/Home'
+            },
+                {
+                    menuId:2,
+                    name:'Add Products',
+                    menuLink:'#/AddProducts'
+                },
+                {
+                    menuId:1,
+                    name:'View Products',
+                    menuLink:'#/ViewProducts'
+                }
+
+
+
+            ]
+
         }
     }
 
