@@ -7,12 +7,12 @@ import {ViewProduct} from "../viewproduct/ViewProduct";
 //functional way of component
 export const Menu=(props)=>{
     return (
-     <HashRouter>
+     <HashRouter >
       <div >
           {
               props.items.map(item => (
                   <div className='vertical-style'>
-                  <button key={item.id} className="btn-style">
+                  <button key={item.menuId} className="btn-style">
                       {item.name}
                   </button>
                   </div>

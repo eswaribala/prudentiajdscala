@@ -32,7 +32,7 @@ export class App extends React.Component{
                     menuLink:'#/AddProduct'
                 },
                 {
-                    menuId:1,
+                    menuId:3,
                     name:'View Product',
                     menuLink:'#/ViewProduct'
                 }
@@ -68,7 +68,7 @@ export class App extends React.Component{
                 <Logo/>
                 <h2>John Deere Inventory App</h2>
                     <h4>{this.state.currentTime.toLocaleTimeString()}</h4>
-                <img src={productPath} class="img"/>
+                <img src={productPath} className="img"/>
                 </div>
 
 
