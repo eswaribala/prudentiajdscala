@@ -27,12 +27,12 @@ export class App extends React.Component{
                 {
                     menuId:2,
                     name:'Add Product',
-                    menuLink:'#/AddProducts'
+                    menuLink:'#/AddProduct'
                 },
                 {
                     menuId:1,
                     name:'View Product',
-                    menuLink:'#/ViewProducts'
+                    menuLink:'#/ViewProduct'
                 }
 
 
