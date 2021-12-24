@@ -45,11 +45,11 @@ export class App extends React.Component{
     }
 
     componentWillMount() {
-        console.log("component will mount...")
+       // console.log("component will mount...")
     }
 
     componentDidMount() {
-       console.log("Component mounted....")
+       //console.log("Component mounted....")
         setInterval(()=>(this.tick(),1000))
     }
 
@@ -61,9 +61,9 @@ export class App extends React.Component{
     }
 
     render() {
-        console.log("Component rendered....")
+       // console.log("Component rendered....")
         return (
-            <div >
+            <div className='app'>
                 <div className='header-style'>
                 <Logo/>
                 <h2>John Deere Inventory App</h2>
@@ -72,7 +72,7 @@ export class App extends React.Component{
                 </div>
 
 
-                <Menu items={this.state.menu} className="menu-style"/>
+                <Menu items={this.state.menu}/>
             </div>
         );
     }

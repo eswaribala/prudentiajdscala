@@ -8,11 +8,11 @@ import ViewProduct from "../viewproduct/ViewProduct";
 export const Menu=(props)=>{
     return (
      <HashRouter >
-      <div >
+      <div>
           {
               props.items.map(item => (
                   <div className='vertical-style'>
-                  <button key={item.menuId} className="btn-style"
+                  <button key={item} className="btn-style"
                           onClick={()=>{ window.location.hash=item.path}}>
                       {item.name}
                   </button>
@@ -21,10 +21,10 @@ export const Menu=(props)=>{
           }
       </div>
       <Routes>
-          <Route path="/" element={Home}></Route>
-          <Route path="/Home" component={Home}></Route>
-          <Route path="/AddProduct" component={AddProduct}></Route>
-          <Route path="/ViewProduct" component={ViewProduct}></Route>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/Home"element={<Home />}></Route>
+          <Route path="/AddProduct" element={<AddProduct />}></Route>
+          <Route path="/ViewProduct" element={<ViewProduct />}></Route>
       </Routes>
      </HashRouter>
     );
