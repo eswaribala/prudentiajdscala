@@ -10,12 +10,12 @@ describe('fetchData', () => {
             data: {
                 hits: [
                     {
-                        objectID: '1',
-                        title: 'a',
+                        productName: 'TV',
+                        cost: 2946752,
                     },
                     {
-                        objectID: '2',
-                        title: 'b',
+                        productName: 'Laptop',
+                        cost: 80000,
                     },
                 ],
             },
