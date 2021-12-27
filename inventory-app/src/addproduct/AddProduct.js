@@ -1,8 +1,11 @@
 import React from "react";
 import './AddProduct.css'
+import axios from 'axios'
+
 export const AddProduct=(props)=>{
     //receiving props from external component
    const{name:propsName,cost:propsCost}=props
+    const apiUrl='http://localhost:4000/products'
     //React Hook
     const [IsAddDisabled,setIsAddDisabled]=React.useState(false)
     const [productName,setProductName]=React.useState(propsName||'')
@@ -29,6 +32,15 @@ export const AddProduct=(props)=>{
 
     const handleSubmit=()=>{
         console.log(productName,cost);
+        var productObj={
+            'productName':productName,
+            'cost':cost
+        }
+        axios.post(apiUrl,productObj).then(response=>{
+            console.log(response.data);
+        }).catch(error=>{
+            console.log(error)
+        })
     }
 
     React.useEffect(() => {
