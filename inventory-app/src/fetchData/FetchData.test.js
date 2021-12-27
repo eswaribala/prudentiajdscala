@@ -30,9 +30,9 @@ describe('fetchData', () => {
         await expect(fetchData(input)).resolves.toEqual(data);
         //test case
         expect(axios.post).toHaveBeenCalledWith(
-            `${apiUrl}`,input
-        );
+            `${apiUrl}`,input);
     });
+
 
 
 });
