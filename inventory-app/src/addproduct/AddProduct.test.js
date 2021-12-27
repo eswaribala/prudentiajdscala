@@ -87,3 +87,27 @@ describe('Submit Mock',()=>{
         expect(mock).toHaveBeenCalledWith("handleSubmit");
     });
 })
+
+describe('Submit Spy On Click',()=>{
+    it("Spy implementation", () => {
+        //setup
+        const logSpy = jest.spyOn(console, 'log');
+        const wrapper = shallow(<AddProduct />);
+        wrapper.find('input[type="text"]').simulate('change', {
+                target: {
+                    value: 'TV',
+                },
+            });
+       wrapper.find('input[type="number"]').simulate('change', {
+                target: {
+                    value: 244543,
+                },
+            });
+
+
+        const button = wrapper.find('input[type="button"]');
+        //expect(button.value).toBe('Add Product');
+        button.simulate('click');
+        expect(logSpy).toBeCalledWith('TV',244543);
+    });
+})
