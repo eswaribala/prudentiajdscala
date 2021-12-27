@@ -1,0 +1,24 @@
+.form-style
+{
+margin-top: 3%;
+
+}
+
+.form-style input{
+    display:block;
+    margin-bottom: 3%;
+    width:100%;
+
+}
+
+.form-style fieldset{
+    width:15%;
+    margin-left: 25%;
+    background-color: goldenrod;
+}
+
+.form-style legend{
+    text-align: center;
+    font-weight: bold;
+
+}
