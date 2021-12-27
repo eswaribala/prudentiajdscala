@@ -6,6 +6,10 @@ jest.mock('axios');
 
 describe('fetchData', () => {
     it('fetches successfully data from an API', async () => {
+        const input={
+            productName:'HeadSet',
+            cost:13000
+        }
         const data = {
             data: {
                 hits: [
@@ -21,12 +25,12 @@ describe('fetchData', () => {
             },
         };
         //setup
-        axios.get.mockImplementationOnce(() => Promise.resolve(data));
+        axios.post.mockImplementationOnce((input) => Promise.resolve(data));
         //invocation
-        await expect(fetchData()).resolves.toEqual(data);
+        await expect(fetchData(input)).resolves.toEqual(data);
         //test case
-        expect(axios.get).toHaveBeenCalledWith(
-            `${apiUrl}`,
+        expect(axios.post).toHaveBeenCalledWith(
+            `${apiUrl}`,input
         );
     });
 
