@@ -31,6 +31,10 @@ export const AddProduct=(props)=>{
         console.log(productName,cost);
     }
 
+    React.useEffect(() => {
+        validateForm();
+    }, [productName, cost]);
+
     return(
           <form>
               <input
