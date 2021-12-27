@@ -103,10 +103,8 @@ describe('Submit Spy On Click',()=>{
                     value: 244543,
                 },
             });
-
-
         const button = wrapper.find('input[type="button"]');
-        //expect(button.value).toBe('Add Product');
+        expect(button.prop('value')).toBe('Add Product');
         button.simulate('click');
         expect(logSpy).toBeCalledWith('TV',244543);
     });
