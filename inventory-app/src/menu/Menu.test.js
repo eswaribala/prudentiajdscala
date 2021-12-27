@@ -19,6 +19,12 @@ describe('menu', () => {
         const buttonElement  = wrapper.find('.btn-style');
         expect(buttonElement).toHaveLength(1);
         expect(buttonElement.text()).toEqual('Home');
+        //expect(wrapper.text().includes('Home')).toBe(true)
+       const btnElement= wrapper.findWhere(node=>{
+            return node.type() === 'input' & node.text === 'Home';
+        })
+        //btnElement.simulate('click');
+        expect(buttonElement).toHaveLength(1);
     });
 });
 
