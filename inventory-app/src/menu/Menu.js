@@ -8,10 +8,10 @@ import ViewProduct from "../viewproduct/ViewProduct";
 export const Menu=(props)=>{
     return (
      <HashRouter >
-      <div>
+      <div className='vertical-style'>
           {
               props.items.map(item => (
-                  <div className='vertical-style' key={item.menuId}>
+                  <div  key={item.menuId}>
                   <button key={item.menuId} className="btn-style"
                           onClick={()=>{ window.location.hash=item.path}}>
                       {item.name}
