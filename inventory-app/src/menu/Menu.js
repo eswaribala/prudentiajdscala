@@ -11,8 +11,8 @@ export const Menu=(props)=>{
       <div>
           {
               props.items.map(item => (
-                  <div className='vertical-style'>
-                  <button key={item} className="btn-style"
+                  <div className='vertical-style' key={item.menuId}>
+                  <button key={item.menuId} className="btn-style"
                           onClick={()=>{ window.location.hash=item.path}}>
                       {item.name}
                   </button>

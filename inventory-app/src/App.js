@@ -44,9 +44,7 @@ export class App extends React.Component{
         }
     }
 
-    componentWillMount() {
-       // console.log("component will mount...")
-    }
+
 
     componentDidMount() {
        //console.log("Component mounted....")
@@ -63,7 +61,8 @@ export class App extends React.Component{
     render() {
        // console.log("Component rendered....")
         return (
-            <div className='app'>
+            <div className='App'>
+
                 <div className='header-style'>
                 <Logo/>
                 <h2>John Deere Inventory App</h2>

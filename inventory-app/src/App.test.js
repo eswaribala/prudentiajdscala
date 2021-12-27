@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
-import { shallow } from 'enzyme';
+import { shallow,mount } from 'enzyme';
 /*
 test('renders learn react link', () => {
   render(<App />);
@@ -18,5 +18,13 @@ describe('Screen should have text as John Deere Inventory App',()=>{
         render(<App/>)
         const text=screen.getByText('John Deere Inventory App')
         expect(text).toBeInTheDocument
+    })
+})
+
+describe('Screen should have Button',()=> {
+    it('Shallow component should have atleast one button', () => {
+         const wrapper= mount(<App/>)
+         const menuElement= wrapper.find('Menu')
+        expect(menuElement).toHaveLength(1)
     })
 })
