@@ -2,7 +2,7 @@ import React from "react";
 import './Menu.css'
 import {Route, HashRouter, Routes} from 'react-router-dom'
 import Home from '../home/Home'
-import AddProduct from "../addproduct/AddProduct";
+import {AddProduct} from "../addproduct/AddProduct";
 import ViewProduct from "../viewproduct/ViewProduct";
 //functional way of component
 export const Menu=(props)=>{
