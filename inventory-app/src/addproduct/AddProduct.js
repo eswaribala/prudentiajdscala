@@ -1,5 +1,5 @@
 import React from "react";
-
+import './AddProduct.css'
 export const AddProduct=(props)=>{
     //receiving props from external component
    const{name:propsName,cost:propsCost}=props
@@ -36,10 +36,13 @@ export const AddProduct=(props)=>{
     }, [productName, cost]);
 
     return(
-          <form>
+          <form className='form-style'>
+              <fieldset>
+                  <legend>Add Product</legend>
               <input
               type="text"
               placeholder='Product Name'
+
               onBlur={handleNameBlur}
               />
               <input
@@ -53,7 +56,7 @@ export const AddProduct=(props)=>{
               value='Add Product'
               disabled={IsAddDisabled}
               />
-
+              </fieldset>
 
           </form>
         )
