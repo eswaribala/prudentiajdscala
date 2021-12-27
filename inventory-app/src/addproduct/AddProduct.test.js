@@ -12,9 +12,10 @@ describe('should have text box',()=>{
 
     it('should have proper props for name field', () => {
         expect(container.find('input[type="text"]').props()).toEqual({
-            onBlur: expect.any(Function),
+            onChange: expect.any(Function),
             placeholder: 'Product Name',
             type: 'text',
+            value:""
         });
     });
    /* it('should have proper props for cost field', () => {
@@ -43,9 +44,34 @@ describe('should have text box',()=>{
 describe('<AddProduct /> test effect hooks', () => {
     const container = mount(<AddProduct/>);
 
+    it('should set the product name on change event with value', () => {
+
+        container.find('input[type="text"]').simulate('change', {
+            target: {
+                value: 'TV',
+            },
+        });
+        expect(container.find('input[type="text"]').prop('value')).toEqual(
+            'TV',
+        );
+    });
+
+    it('should set the cost value on change event with value', () => {
+
+        container.find('input[type="number"]').simulate('change', {
+            target: {
+                value: 244543,
+            },
+        });
+        expect(container.find('input[type="number"]').prop('value')).toEqual(
+            244543,
+        );
+    });
+
+
     it('should have the add product disabled by default', () => {
         expect(
             container.find('input[type="button"]').prop('disabled'),
-        ).toBeTruthy();
+        ).toBeFalsy();
     });
 });

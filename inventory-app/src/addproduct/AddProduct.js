@@ -3,15 +3,15 @@ import './AddProduct.css'
 import axios from 'axios'
 
 export const AddProduct=(props)=>{
-    console.log(props)
+    //console.log(props)
     //receiving props from external component
    const{productName:propsName,cost:propsCost, dispatch}=props
 
     const apiUrl='http://localhost:4000/products'
     //React Hook
     const [IsAddDisabled,setIsAddDisabled]=React.useState(false)
-    const [productName,setProductName]=React.useState(propsName||'')
-    const [cost,setCost]=React.useState(propsCost||0)
+    const [productName,setProductName]=React.useState(propsName || '')
+    const [cost,setCost]=React.useState(propsCost || 0)
 
     //validators
     const validateName = text => /[A-Za-z]{2,15}/.test(text);
@@ -56,8 +56,8 @@ export const AddProduct=(props)=>{
               <input
               type="text"
               placeholder='Product Name'
-
-              onBlur={handleNameBlur}
+              value={productName}
+              onChange={handleNameBlur}
               />
               <input
               type="number"
