@@ -1,14 +1,58 @@
 import React from "react";
 
-export default class AddProduct extends React.Component{
+export const AddProduct=(props)=>{
+    //receiving props from external component
+   const{name:propsName,cost:propsCost}=props
+    //React Hook
+    const [IsAddDisabled,setIsAddDisabled]=React.useState(false)
+    const [productName,setProductName]=React.useState(propsName||'')
+    const [cost,setCost]=React.useState(propsCost||0)
 
-    render() {
-        console.log("Add Product....")
-        return(
+    //validators
+    const validateName = text => /[A-Za-z]{2,15}/.test(text);
 
-                <h1>Add Product</h1>
+    const validateForm = () => {
+        setIsAddDisabled(cost <= 0 || !validateName(productName));
+    };
 
-        )
+    //set values whenever modified
+
+    const handleNameBlur = evt => {
+        const nameValue = evt.target.value.trim();
+        setProductName(nameValue);
+    };
+
+    const handleCostChange = evt => {
+        const costValue = evt.target.value;
+        setCost(costValue);
+    };
+
+    const handleSubmit=()=>{
+        console.log(productName,cost);
     }
+
+    return(
+          <form>
+              <input
+              type="text"
+              placeholder='Product Name'
+              onBlur={handleNameBlur}
+              />
+              <input
+              type="number"
+              placeholder='Cost'
+              onChange={handleCostChange}
+              />
+              <input
+              type="button"
+              onClick={handleSubmit}
+              value='Add Product'
+              disabled={IsAddDisabled}
+              />
+
+
+          </form>
+        )
+
 }
 
