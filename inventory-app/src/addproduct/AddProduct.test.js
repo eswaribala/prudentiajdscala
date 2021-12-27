@@ -5,7 +5,7 @@ import { shallow,mount } from 'enzyme';
 describe('should have text box',()=>{
     const initialProps = {
         propsName: 'Laptop',
-        propsCost: 34000,
+        propsCost: 0,
     };
 
     const container = shallow(<AddProduct {...initialProps} />);
@@ -18,11 +18,11 @@ describe('should have text box',()=>{
             value:""
         });
     });
-   /* it('should have proper props for cost field', () => {
+  /*  it('should have proper props for cost field', () => {
         expect(container.find('input[type="number"]').props()).toEqual({
             onChange: expect.any(Function),
             type: 'number',
-            value: 34000,
+            value: 0,
         });
     });*/
 
@@ -69,9 +69,21 @@ describe('<AddProduct /> test effect hooks', () => {
     });
 
 
-    it('should have the add product disabled by default', () => {
+    it('should not have the add product disabled by default', () => {
         expect(
             container.find('input[type="button"]').prop('disabled'),
         ).toBeFalsy();
     });
+
+
+
 });
+
+describe('Submit Mock',()=>{
+    it("mock implementation", () => {
+        //setup
+        const mock = jest.fn(() => "Data Received");
+        expect(mock("handleSubmit")).toBe("Data Received");
+        expect(mock).toHaveBeenCalledWith("handleSubmit");
+    });
+})
