@@ -18,6 +18,6 @@ describe('routes using array of routes',()=>{
         console.log(pathMap);
     })
     it('should show Home component',()=>{
-        expect(pathMap['/Home']).toBeFalsy();
+        expect(pathMap['/Home']).toBe(Home)
     })
 })

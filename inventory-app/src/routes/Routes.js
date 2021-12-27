@@ -11,9 +11,9 @@ export class Routes extends React.Component{
         return(
             <div>
                 <Router>
-                    <Route path="/Home" element={<Home />}></Route>
-                    <Route path="/AddProduct" element={<AddProduct />}></Route>
-                    <Route path="/ViewProduct" element={<ViewProduct />}></Route>
+                    <Route path="/Home" component={Home} ></Route>
+                    <Route path="/AddProduct" component={AddProduct} ></Route>
+                    <Route path="/ViewProduct" component={ViewProduct}></Route>
 
                 </Router>
             </div>
