@@ -39,3 +39,13 @@ describe('should have text box',()=>{
     });
 
 })
+
+describe('<AddProduct /> test effect hooks', () => {
+    const container = mount(<AddProduct/>);
+
+    it('should have the add product disabled by default', () => {
+        expect(
+            container.find('input[type="button"]').prop('disabled'),
+        ).toBeTruthy();
+    });
+});
