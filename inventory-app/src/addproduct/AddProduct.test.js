@@ -4,8 +4,8 @@ import { shallow,mount } from 'enzyme';
 
 describe('should have text box',()=>{
     const initialProps = {
-        name: 'Laptop',
-        cost: 34000,
+        propsName: 'Laptop',
+        propsCost: 34000,
     };
 
     const container = shallow(<AddProduct {...initialProps} />);
@@ -17,6 +17,25 @@ describe('should have text box',()=>{
             type: 'text',
         });
     });
+   /* it('should have proper props for cost field', () => {
+        expect(container.find('input[type="number"]').props()).toEqual({
+            onChange: expect.any(Function),
+            type: 'number',
+            value: 34000,
+        });
+    });*/
 
+
+    it('should set the cost value on change event with value', () => {
+
+        container.find('input[type="number"]').simulate('change', {
+            target: {
+                value: 3000,
+            },
+        });
+        expect(container.find('input[type="number"]').prop('value')).toEqual(
+            3000,
+        );
+    });
 
 })

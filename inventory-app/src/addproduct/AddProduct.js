@@ -3,8 +3,10 @@ import './AddProduct.css'
 import axios from 'axios'
 
 export const AddProduct=(props)=>{
+    console.log(props)
     //receiving props from external component
-   const{name:propsName,cost:propsCost}=props
+   const{productName:propsName,cost:propsCost, dispatch}=props
+
     const apiUrl='http://localhost:4000/products'
     //React Hook
     const [IsAddDisabled,setIsAddDisabled]=React.useState(false)
@@ -61,6 +63,7 @@ export const AddProduct=(props)=>{
               type="number"
               placeholder='Cost'
               onChange={handleCostChange}
+              value={cost}
               />
               <input
               type="button"
