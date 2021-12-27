@@ -1,6 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 import { shallow,mount } from 'enzyme';
+import {Logo} from "./logo/Logo";
+import logoPath from './assets/logo.jpg'
 /*
 test('renders learn react link', () => {
   render(<App />);
@@ -28,3 +30,13 @@ describe('Screen should have Button',()=> {
         expect(menuElement).toHaveLength(1)
     })
 })
+
+describe("<Logo /> component", () => {
+    it("renders an image", () => {
+        const logo = shallow(<Logo />);
+
+        expect(logo.find("img").prop("src")).toEqual(logoPath);
+
+    });
+});
+
